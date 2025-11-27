@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Farm - Gráficos dos Sensores</title>
+</head>
+<body>
+    <h2>Smart Farm - Gráficos dos sensores</h2>
+
+    <div id="legend">
+        <span style="color:red">Temperatura</span>
+        <span style="color:blue">Umindade</span>
+        <span style="color:purple">Vapor/Chuva</span>
+        <span style="color:orange">Luz</span>
+        <span style="color:green">Solo</span>
+        <span style="color:cyan">Água</span>
+    </div>
+
+    <canvas id="chartCanvas" width="800" height="400"></canvas>
+
+    <script>
+        const ESP32_IP = "http://10.106.33.1";
+        let sensorHistory = [];
+        let isUpdating = false;
+
+
+        async function updateSensors(){
+            if(isUpdating) return;
+            isUpdating = true;
+
+            try{
+                const res = await fetch(`${ESP32_IP}/sensors`);
+                const data = await res.json();
+
+                data.light = normalizeLight(data.light);
+                addToHistory(data);
+                renderChart();
+
+            }catch (e){
+                console.warn("Erro ao conectar com ESP32:", e);
+            }finally{
+                isUpdating = false;
+            }
+        }
+
+
+        function normalizeLight(raw){
+            let light = Math.pow(raw / 4095.0, 0.6) * 100.0;
+            light = Math.round(light / 10) * 10;
+            return Math.min(100, Math.max(0, light));
+        }
+
+
+        function addToHistory(data){
+            if(sensorHistory.length > 60) sensorHistory.shift();
+            sensorHistory.push({
+                temp : data.temperature,
+                humidity: data.humidity,
+                steam: data.steam,
+                light: data.light,
+                soil: data.soil,
+                water: data.water
+            });
+        }
+
+
+        {
+            temp: 25.5,
+            humidity: 60,
+            steam: 10,
+            light: 80,
+            soil: 45,
+            water: 30
+        }
+
+
+        function renderChart(){
+            const canvas = document.getElementById("chartCanvas");
+            const ctx = canvas.getContext("2d");
+
+            const width = canvas.width;
+            const height = canvas.height;
+            const margin = 50;
+            const graphWidth = width - 2 * margin;
+            const graphHeight = height - 2 * margin;
+
+            ctx.clearRect(0,0,width,height);
+        }
+
+
+        ctx.strokeStyle = "#cccccc";
+        ctx.lineWidth = 1;
+        for(let i = 0; i <= 5; i++){
+            const y = margin + (graphHeight / 5) * i;
+            ctx.beginPath();
+            ctx.moveTo(margin, y);
+            ctx.lineTo(width - margin, y);
+            ctx.stroke();
+        }
+
+        ctx.strokeStyle = "#000";
+        ctx.beginPath();
+        ctx.moveTo(margin, margin);
+        ctx.lineTo(margin, height - margin);
+        ctx.lineTo(width - margin, height - margin);
+        ctx.stroke();
+
+
+        ctx.font = "12px Arial";
+        ctx.textAlign = "right";
+        for(let i = 0; i<= 5; i++){
+            const val = 100 - i * 20;
+            const y = margin + (graphHeight/5) * i;
+            ctx.fillText(val + "%", margin - 10, y+4);
+        }
+
+        ctx.textAlign = "center";
+        ctx.fillText("Amostras ( tempo )", width/2, height-10);
+
+
+        ctx.save();
+        ctx.rotate(-Math.PI / 2);
+        ctx.textAlign = "center";
+        ctx.fillText("Percentual (%)", -height / 2,15);
+        ctx.restore();
+
+
+        const colors = {
+            temp: "red",
+            humidity: "blue",
+            steam: "purple",
+            light: "orange",
+            soil: "green",
+            water: "cyan"
+        };
+
+
+        for(const [ key , color ] of Object.entries(colors)){
+            const data = sensorHistory.map( d=> s[key]);
+            drawline(ctx,data,color,graphWidth,graphHeight,margin,width,height);
+        }
+
+        sensorHistory = [
+            {temp:25, humidity:60, steam:10, light:80, soil:45, water:30},
+            {temp:26, humidity:58, steam:12, light:82, soil:43, water:28}
+        ];
+
+        key = "temp";
+        data = sensorHistory.map(d => d[key]);
+
+
+        function drawline(ctx,data,color,graphWidth,graphHeight,margin,width,height){
+            ctx.beginPath();
+            ctx.strokeStyle = color;
+            ctx.lineWidth = 2;
+
+
+            data.forEach((val, i) => {
+                const x = margin + (i/Math.max(data.length - 1,1)) * graphWidth;
+                const y = height - margin - (val/100) * graphHeight;
+
+                if(i === 0 ) ctx.moveTo(x,y);
+                else ctx.lineTo(x,y);
+            });
+
+            ctx.stroke();
+
+            ctx.fillStyle = color;
+            data.forEach((val, i ) => {
+                const x = margin + (i/Math.max(data.length - 1,1)) * graphWidth;
+                const y = height - margin - (val / 100) * graphHeight;
+                ctx.beginPath();
+                ctx.arc(x,y,0,2 * Math.PI);
+                ctx.fill();
+            });
+        }
+
+        x = margem + (índice / quantidade_total) * largura_útil;
+
+        y= altura - margin - (valor_percentual / 100) * altura_útil;
+
+        setInterval(updateSensors, 2000);
+        updateSensors();
+
+
+    </script>
+    
+</body>
+</html>
