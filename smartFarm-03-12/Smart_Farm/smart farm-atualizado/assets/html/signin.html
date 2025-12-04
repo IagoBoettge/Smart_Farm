@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signin</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <audio id="backgroundMusic" loop>
+      <source src="../audio/musica-pou.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="main">
+      <h1>Entrar</h1>
+
+      <!-- Mensagem de erro -->
+      <div id="msgError" aria-live="polite" hidden></div>
+
+      <!-- Usuário -->
+      <div>
+        <label id="userLabel" for="usuario">Usuário</label>
+        <input type="text" id="usuario" autocomplete="username" required />
+      </div>
+
+      <!-- Senha -->
+      <div>
+        <label id="senhaLabel" for="senha">Senha</label>
+        <input type="password" id="senha" autocomplete="current-password" required />
+      </div>
+
+      <div>
+        <button type="button" onclick="entrar()">Entrar</button>
+      </div>
+
+      <p>
+        Não tem uma conta?
+        <a href="./signup.html">Cadastre-se</a>
+      </p>
+    </div>
+
+    <script>
+      // Iniciar música ao carregar
+      const music = document.getElementById('backgroundMusic');
+      
+      // Tentar tocar automaticamente
+      music.play().catch(() => {
+        // Se falhar, tocar após qualquer interação
+        document.addEventListener('click', () => {
+          music.play();
+        }, { once: true });
+      });
+
+      // Tornar o botão de olho funcional sem depender de CSS/ícone externo
+      document.addEventListener("DOMContentLoaded", function () {
+        const btn = document.getElementById("toggleSenha");
+        const input = document.getElementById("senha");
+        if (btn) {
+          btn.addEventListener("click", () => {
+            input.type = input.type === "password" ? "text" : "password";
+          });
+        }
+      });
+    </script>
+    <script src="../js/signin.js"></script>
+  </body>
+</html>

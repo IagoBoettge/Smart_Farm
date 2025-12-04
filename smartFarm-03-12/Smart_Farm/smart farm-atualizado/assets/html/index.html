@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Farm Dashboard</title>
+    <script src="../js/app.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    
+</head>
+<body>
+  <header>
+    <h2>🌿 Smart Farm Dashboard</h2>
+    <nav>
+      <button id="btn-dashboard"  onclick="showSection('dashboard')">Painel Atual</button>
+      <button id="btn-charts" onclick="showSection('charts')">Gráficos</button>
+      <button id="btn-botoes" onclick="showSection('botoes')">Botões</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="dashboard">
+      <div id="sensors">Carregando sensores...</div>
+      
+    </section>
+
+    <!-- Gráficos (visível só no menu "Gráficos") -->
+    <section id="charts" style="display: none;">
+      <h3>📊 Dados Históricos dos Sensores</h3>
+      <div style="display:flex; justify-content:center; gap:18px; margin-bottom:10px;">
+        <span style="color:#e53935;">🌡️ Temp</span>
+        <span style="color:#1e88e5;">💧 Umidade</span>
+        <span style="color:#6a1b9a;">🌦️ Vapor</span>
+        <span style="color:#FFD600;">💡 Luz</span>
+        <span style="color:#43a047;">🌱 Solo</span>
+        <span style="color:#00acc1;">🚰 Água</span>
+      </div>
+      <canvas id="chartCanvas" width="700" height="320"></canvas>
+    </section>
+
+    <section id="botoes" style="display: none;">
+      <div style="display:flex; justify-content:center; gap:18px; margin-bottom:10px;">
+        <div id="controls">
+        <button onclick="sendCmd('LED')">💡 LED</button>
+        <button onclick="sendCmd('FAN')">🌀 Ventilador</button>
+        <button onclick="sendCmd('FEED')">🍽️ Alimentar</button>
+        <button onclick="sendCmd('WATER')">🚿 Regar</button>
+      </div>
+      </div>
+      
+    </section>
+  </main>
+</body>
+</html>
