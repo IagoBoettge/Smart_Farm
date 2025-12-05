@@ -10,8 +10,9 @@
 </head>
 <body>
   <header>
-    <h2>🌿 Smart Farm Dashboard</h2>
+    <img src="css/icons/logo.png" alt="">
     <nav>
+      <button id="btn-pg-inicio" class="active" onclick="showSection('pg-inicio')">Início</button>
       <button id="btn-dashboard"  onclick="showSection('dashboard')">Painel Atual</button>
       <button id="btn-charts" onclick="showSection('charts')">Gráficos</button>
       <button id="btn-botoes" onclick="showSection('botoes')">Botões</button>
@@ -19,7 +20,7 @@
   </header>
 
   <main>
-    <section id="dashboard">
+    <section id="dashboard" style="display: none;">
       <div id="sensors">Carregando sensores...</div>
       
     </section>
@@ -28,7 +29,8 @@
     <section id="charts" style="display: none;">
       <h3>📊 Dados Históricos dos Sensores</h3>
       <div style="display:flex; justify-content:center; gap:18px; margin-bottom:10px;">
-        <span style="color:#e53935;">🌡️ Temp</span>
+        
+        <span style="color:#e53935;"> Temp</span>
         <span style="color:#1e88e5;">💧 Umidade</span>
         <span style="color:#6a1b9a;">🌦️ Vapor</span>
         <span style="color:#FFD600;">💡 Luz</span>
@@ -49,6 +51,52 @@
       </div>
       
     </section>
+
+    <section id="pg-inicio">
+      <audio id="musicaRomantica" loop>
+        <source src="../audio/musica_romantica.mp3" type="audio/mpeg">
+      </audio>
+      <div style="text-align: center; margin-top: 50px; font-size: 20px;">
+        <h1>Bem-vindo ao Smart Farm Dashboard</h1>
+        <p>Monitore e controle sua fazenda inteligente com facilidade.</p>
+        
+        <!-- Conversa Wall-E e EVA -->
+        <div style="max-width: 800px; margin: 40px auto; background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px;">
+          <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+            <div style="font-size: 4rem;">🤖</div>
+            <div style="background: rgba(255,255,255,0.9); color: #333; padding: 15px; border-radius: 15px 15px 15px 0; flex: 1; text-align: left;">
+              <strong>Wall-E:</strong> EVA! Olha essa fazenda inteligente! 🌱✨
+            </div>
+          </div>
+          
+          <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px; flex-direction: row-reverse;">
+            <div style="font-size: 4rem;">🤍</div>
+            <div style="background: rgba(255,255,255,0.9); color: #333; padding: 15px; border-radius: 15px 15px 0 15px; flex: 1; text-align: left;">
+              <strong>EVA:</strong> Wall-E! Sensores... monitoramento... INCRÍVEL! 💚
+            </div>
+          </div>
+          
+          <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+            <div style="font-size: 4rem;">🤖</div>
+            <div style="background: rgba(255,255,255,0.9); color: #333; padding: 15px; border-radius: 15px 15px 15px 0; flex: 1; text-align: left;">
+              <strong>Wall-E:</strong> Podemos cuidar das plantas juntos! 🌿💧
+            </div>
+          </div>
+          
+          <div style="display: flex; align-items: center; gap: 15px;">
+            <div style="font-size: 4rem;">🤍</div>
+            <div style="background: rgba(255,255,255,0.9); color: #333; padding: 15px; border-radius: 15px 15px 0 15px; flex: 1; text-align: left;">
+              <strong>EVA:</strong> Diretriz... cultivar vida! Wall-E... ❤️
+            </div>
+          </div>
+        </div>
+        
+        <img id="wgiff" src="css/source.gif" alt="gif animado " style="max-width: 80%; height: auto; margin-top: 20px;">
+      </div>
+      
+    </section>
+
+    
   </main>
 </body>
 </html>

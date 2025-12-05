@@ -2,7 +2,7 @@
 const ESP32_IP = "http://10.135.182.1";
 let sensorHistory = [];
 let isUpdating = false;
-let activeSection = "dashboard";
+let activeSection = "pg-inicio";
 
 // alternar entre painel e gráficos
 function showSection(section) {
@@ -13,6 +13,10 @@ function showSection(section) {
     document.getElementById("btn-dashboard").classList.toggle("active", section === "dashboard");
     document.getElementById("btn-charts").classList.toggle("active", section === "charts");
     document.getElementById("btn-botoes").classList.toggle("active", section === "botoes");
+    document.getElementById("botoes").style.display = section === "botoes" ? "block" : "none";
+    document.getElementById("btn-dashboard").classList.toggle("active", section === "dashboard");
+    document.getElementById("pg-inicio").style.display = section === "pg-inicio" ? "block" : "none";
+    document.getElementById("btn-pg-inicio").classList.toggle("active", section === "pg-inicio");
 }
 
 // atualização dos sensores
