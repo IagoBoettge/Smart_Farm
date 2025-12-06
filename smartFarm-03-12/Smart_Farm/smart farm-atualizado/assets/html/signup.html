@@ -9,12 +9,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   </head>
-  <audio autoplay loop>
-    <source src="../audio/musica-pou.mp3" type="audio/mpeg">
-</audio>
   <body>
+    <audio autoplay loop>
+      <source src="../audio/musica-pou.mp3" type="audio/mpeg">
+    </audio>
+    
     <div class="main">
       <h1>Cadastrar</h1>
+       <div id="msgError" aria-live="polite" ></div>
+      <div id="msgSuccess" aria-live="polite" ></div>
 
       
       <div>
@@ -46,22 +49,6 @@
       </div>
     </div>
 
-    <script>
-      // Botões de mostrar/ocultar senha sem CSS externo
-      document.addEventListener("DOMContentLoaded", function () {
-        const senha = document.getElementById("senha");
-        const btnSenha = document.getElementById("verSenha");
-        btnSenha.addEventListener("click", () => {
-          senha.type = senha.type === "password" ? "text" : "password";
-        });
-
-        const cSenha = document.getElementById("confirmSenha");
-        const btnCSenha = document.getElementById("verConfirmSenha");
-        btnCSenha.addEventListener("click", () => {
-          cSenha.type = cSenha.type === "password" ? "text" : "password";
-        });
-      });
-    </script>
     <script src="../js/signup.js"></script>
   </body>
 </html>

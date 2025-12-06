@@ -9,6 +9,9 @@
     
 </head>
 <body>
+   <audio id="backgroundMusic" loop>
+      <source src="../audio/musica_romantica.mp3" type="audio/mpeg">
+    </audio>
   <header>
     <img src="css/icons/logo.png" alt="">
     <nav>
@@ -22,6 +25,21 @@
   <main>
     <section id="dashboard" style="display: none;">
       <div id="sensors">Carregando sensores...</div>
+       <div class="sensor">
+         
+            <div class="label"><span>temperatura</span><span>20</span></div>
+            <div class="bar"><div class="bar-fill"></div></div>
+             <div class="label"><span>temperatura</span><span>20</span></div>
+            <div class="bar"><div class="bar-fill"></div></div>
+             <div class="label"><span>temperatura</span><span>20</span></div>
+            <div class="bar"><div class="bar-fill"></div></div>
+             <div class="label"><span>temperatura</span><span>20</span></div>
+            <div class="bar"><div class="bar-fill"></div></div>
+             <div class="label"><span>temperatura</span><span>20</span></div>
+            <div class="bar"><div class="bar-fill"></div></div>
+             <div class="label"><span>temperatura</span><span>20</span></div>
+            <div class="bar"><div class="bar-fill"></div></div>
+          </div>
       
     </section>
 
@@ -30,12 +48,12 @@
       <h3>📊 Dados Históricos dos Sensores</h3>
       <div style="display:flex; justify-content:center; gap:18px; margin-bottom:10px;">
         
-        <span style="color:#e53935;"> Temp</span>
-        <span style="color:#1e88e5;">💧 Umidade</span>
-        <span style="color:#6a1b9a;">🌦️ Vapor</span>
-        <span style="color:#FFD600;">💡 Luz</span>
-        <span style="color:#43a047;">🌱 Solo</span>
-        <span style="color:#00acc1;">🚰 Água</span>
+        <span>🔥 Temp</span>
+        <span>💨 Umidade</span>
+        <span>🌧️ Vapor</span>
+        <span>🔆 Luz</span>
+        <span>🌾 Solo</span>
+        <span>🌊 Água</span>
       </div>
       <canvas id="chartCanvas" width="700" height="320"></canvas>
     </section>

@@ -48,7 +48,9 @@ nav button {
     font-size: 2rem;
     cursor: pointer;
     margin-left: 12px;
+
 }
+
 h2{
     font-size: 2.5rem;
 
@@ -73,7 +75,7 @@ main {
 #charts,
 #botoes {
     background: var(--corCard);
-    height: 75vh; /* 75% da altura da viewport */
+    height: 85vh; /* 75% da altura da viewport */
     border-radius: 10px;
     padding: 20px;
     width: 100%;
@@ -83,9 +85,22 @@ main {
     margin-bottom: 20px;
 }
 
+#dashboard,
+#charts {
+   font-size: 3rem;
+
+}
+
+#charts span{
+    padding-right: 90px;
+}
+
+
 .sensor {
     margin: 12px 0;
+    font-size: 3 rem;
 }
+
 
 .label {
     display: flex;
@@ -94,11 +109,20 @@ main {
 }
 
 .bar {
-    background: #e0e0e0;
-    border-radius: 8px;
+    background: #0089f2ec;
+    border-radius: 50px 0px;
     height: 10px;
     overflow: hidden;
     margin-top: 5px;
+    margin-bottom: 70px;
+    padding-bottom: 20px;
+}
+.bar:hover{
+    background-color: rgb(133, 219, 253);
+    transition: 0.9s;
+    transform: rotate(360deg);
+    padding-bottom: 40px;
+    border-radius: 0px 20px;
 }
 
 .bar-fill {

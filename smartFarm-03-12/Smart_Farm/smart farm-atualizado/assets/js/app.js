@@ -4,6 +4,17 @@ let sensorHistory = [];
 let isUpdating = false;
 let activeSection = "pg-inicio";
 
+
+const music = document.getElementById('backgroundMusic');
+      
+      // Tentar tocar automaticamente
+music.play().catch(() => {
+        // Se falhar, tocar após qualquer interação
+  document.addEventListener('click', () => {
+    music.play();
+  }, { once: true });
+  });
+
 // alternar entre painel e gráficos
 function showSection(section) {
     activeSection = section;
@@ -52,11 +63,11 @@ function normalizeLight(raw) {
 function renderSensors(data) {
     const sensores = [
         { nome: "🌡️ Temperatura", valor: data.temperature, unidade: "°C" },
-        { nome: "💧 Umidade", valor: data.humidity, unidade: "%" },
+        { nome: "☂️ Umidade", valor: data.humidity, unidade: "%" },
         { nome: "🌦️ Vapor/Chuva", valor: data.steam, unidade: "%" },
-        { nome: "💡 Luz Ambiente", valor: data.light, unidade: "%" },
-        { nome: "🌱 Umidade do Solo", valor: data.soil, unidade: "%" },
-        { nome: "🚰 Nível da Água", valor: data.water, unidade: "%" },
+        { nome: "🔆 Luz Ambiente", valor: data.light, unidade: "%" },
+        { nome: "🌵 Umidade do Solo", valor: data.soil, unidade: "%" },
+        { nome: "🫗 Nível da Água", valor: data.water, unidade: "%" },
     ];
     let html = "";
     sensores.forEach(s => {

@@ -1,4 +1,26 @@
 // signin.js
+// Iniciar música ao carregar
+const music = document.getElementById('backgroundMusic');
+      
+      // Tentar tocar automaticamente
+music.play().catch(() => {
+        // Se falhar, tocar após qualquer interação
+  document.addEventListener('click', () => {
+    music.play();
+  }, { once: true });
+  });
+
+      // Tornar o botão de olho funcional sem depender de CSS/ícone externo
+document.addEventListener("DOMContentLoaded", function () {
+  const btn = document.getElementById("toggleSenha");
+  const input = document.getElementById("senha");
+  if (btn) {
+    btn.addEventListener("click", () => {
+      input.type = input.type === "password" ? "text" : "password";
+    });
+  }
+      });
+
 const msgError = document.getElementById('msgError');
 function entrar() {
   const usuario = document.querySelector('#usuario');
@@ -16,7 +38,7 @@ function entrar() {
   });
 
   if (usuario.value === userValid.user && senha.value === userValid.senha) {
-    window.location.href = '../../index.html';
+    window.location.href = '../html/index.html';
     const mathRandom = Math.random().toString(16).substring(2);
     const token = mathRandom + mathRandom;
     localStorage.setItem('token', token);

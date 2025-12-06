@@ -41,30 +41,6 @@
         <a href="./signup.html">Cadastre-se</a>
       </p>
     </div>
-
-    <script>
-      // Iniciar música ao carregar
-      const music = document.getElementById('backgroundMusic');
-      
-      // Tentar tocar automaticamente
-      music.play().catch(() => {
-        // Se falhar, tocar após qualquer interação
-        document.addEventListener('click', () => {
-          music.play();
-        }, { once: true });
-      });
-
-      // Tornar o botão de olho funcional sem depender de CSS/ícone externo
-      document.addEventListener("DOMContentLoaded", function () {
-        const btn = document.getElementById("toggleSenha");
-        const input = document.getElementById("senha");
-        if (btn) {
-          btn.addEventListener("click", () => {
-            input.type = input.type === "password" ? "text" : "password";
-          });
-        }
-      });
-    </script>
     <script src="../js/signin.js"></script>
   </body>
 </html>

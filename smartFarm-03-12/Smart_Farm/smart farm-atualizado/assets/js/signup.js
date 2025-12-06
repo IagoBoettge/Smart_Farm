@@ -1,4 +1,17 @@
 // signup.js
+const music = document.getElementById('backgroundMusic');
+
+// Tentar tocar automaticamente apenas se o elemento existir
+if (music) {
+  music.play().catch(() => {
+    // Se falhar, tocar após qualquer interação
+    document.addEventListener('click', () => {
+      music.play();
+    }, { once: true });
+  });
+}
+
+
 const nome = document.querySelector('#nome');
 const labelNome = document.querySelector('#labelNome');
 let validNome = false;
