@@ -59,15 +59,14 @@
     </section>
 
     <section id="botoes" style="display: none;">
-      <div style="display:flex; justify-content:center; gap:18px; margin-bottom:10px;">
-        <div id="controls">
-        <button onclick="sendCmd('LED')">💡 LED</button>
-        <button onclick="sendCmd('FAN')">🌀 Ventilador</button>
-        <button onclick="sendCmd('FEED')">🍽️ Alimentar</button>
-        <button onclick="sendCmd('WATER')">🚿 Regar</button>
-      </div>
-      </div>
-      
+        <h3 style="text-align:center; margin-bottom: 60px;">Controles</h3>
+        <div class="btn-column">
+            <button class="control-btn led" onclick="sendCmd('LED')">🔦 LED</button>
+            <button class="control-btn fan" onclick="sendCmd('FAN')">🍃 Ventilar</button>
+            <button class="control-btn feed" onclick="sendCmd('FEED')">🍽️ Alimentar</button>
+            <button class="control-btn water" onclick="sendCmd('WATER')">⛲ Água</button>
+        </div>
+    
     </section>
 
     <section id="pg-inicio">

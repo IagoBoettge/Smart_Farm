@@ -172,3 +172,78 @@ nav button:hover{
    
 
 }
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.btn-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  margin-top: 15px;
+}
+
+.control-btn {
+  width: 250px;
+  padding: 20px 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 14px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(4px);
+  transition: 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+}
+
+.control-btn.led {
+  background-color: #df6aff;
+}
+.control-btn.led:hover {
+  background-color: #df6aff;
+}
+
+.control-btn.fan {
+  background-color: #009d08;
+}
+.control-btn.fan:hover {
+  background-color: #009d08;
+}
+
+.control-btn.feed {
+  background-color: #e5a400;
+}
+.control-btn.feed:hover {
+  background-color: #e5a400;
+}
+
+.control-btn.water {
+  background-color: #007bbe;
+}
+.control-btn.water:hover {
+  background-color: #007bbe;
+}
+
+.control-btn:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.22);
+}
+
+#botoes h3 {
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+  color: white;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.25);
+  font-family: inherit; /* garante a mesma fonte do site */
+}
