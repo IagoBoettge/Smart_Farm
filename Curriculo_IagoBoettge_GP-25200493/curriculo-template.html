@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Currículo Profissional – Template CSS Externo</title>
+  
+  <!-- Link para o arquivo CSS externo -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!--
+  ========================= INSTRUÇÕES PARA OS ALUNOS =========================
+  1) Este template usa CSS EXTERNO (arquivo styles.css separado)
+  2) NÃO use style="" nas tags HTML
+  3) Modifique apenas o arquivo styles.css para estilização
+  4) Mantenha os comentários TODO até completar todos os exercícios
+  5) Personalize o conteúdo HTML com suas informações
+  =========================================================================
+  -->
+</head>
+<body>
+  <!-- Container principal da página -->
+  <div class="container">
+    
+    <!-- ===================== SEÇÃO CABEÇALHO ===================== -->
+    <header class="cabecalho">
+      <div class="foto-container">
+        <img src= "foto.jpeg" 
+             alt="Foto de perfil" 
+             class="foto-perfil"/>
+      </div>
+      
+      <div class="info-principal">
+        <h1 class="nome-completo">Iago Boettge</h1>
+        <h2 class="cargo-objetivo">Generative AI Developer | Objetivo Profissional</h2>
+        <p class="resumo-profissional">
+          Sou estagiário de IA generativa na BlueMetrics, estudante de Ciência da Computação 
+          na Universidade La Salle e Técnico em TI pela QI. Tenho interesse em diversas áreas da computação, 
+          prezando pelo aprendizado contínuo e pelo aprimoramento de habilidades como gestão de prazos, trabalho sob pressão e resolução de problemas, buscando sempre evoluir profissionalmente.
+        </p>
+      </div>
+    </header>
+
+    <!-- ===================== GRID PRINCIPAL ===================== -->
+    <div class="grid-principal">
+      
+      <!-- COLUNA ESQUERDA -->
+      <aside class="coluna-esquerda">
+        
+        <!-- INFORMAÇÕES DE CONTATO -->
+        <section class="secao-contato">
+          <h3 class="titulo-secao">
+            <i class="icone">📞</i>
+            Contato
+          </h3>
+          <div class="lista-contato">
+            <div class="item-contato">
+              <span class="label">Email:</span>
+              <a href="/cdn-cgi/l/email-protection#235046560d464e424a4f63465b464e534f4c0d404c4e" class="link-contato">
+                <span class="__cf_email__" data-cfemail="6c1f09194209010d05002c091409011c0003420f0301">[iagoboettge@gmail.com]</span>
+              </a>
+            </div>
+            <div class="item-contato">
+              <span class="label">Telefone:</span>
+              <span class="valor">(51) 996748449</span>
+            </div>
+            <div class="item-contato">
+              <span class="label">LinkedIn:</span>
+              <a href="https://www.linkedin.com/in/iago-boetgge/" class="link-contato">linkedin.com/in/iago-boetgge</a>
+            </div>
+            <div class="item-contato">
+              <span class="label">GitHub:</span>
+              <a href="https://github.com/IagoBoettge" class="link-contato">github.com/IagoBoettge</a>
+            </div>
+            <div class="item-contato">
+              <span class="label">Localização:</span>
+              <span class="valor">Canoas - RS</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- HABILIDADES TÉCNICAS -->
+        <section class="secao-habilidades">
+          <h3 class="titulo-secao">
+            <i class="icone">🛠️</i>
+            Habilidades Técnicas
+          </h3>
+          <div class="grid-habilidades">
+            <span class="chip-habilidade">HTML5</span>
+            <span class="chip-habilidade">CSS3</span>
+            <span class="chip-habilidade">JavaScript</span>
+            <span class="chip-habilidade">Lógica de Progaramação</span>
+            <span class="chip-habilidade">SQL Server</span>
+            <span class="chip-habilidade">Git/GitHub</span>
+            <span class="chip-habilidade">SQL</span>
+            <span class="chip-habilidade">Python</span>
+          </div>
+        </section>
+
+        <!-- IDIOMAS -->
+        <section class="secao-idiomas">
+          <h3 class="titulo-secao">
+            <i class="icone">🌐</i>
+            Idiomas
+          </h3>
+          <div class="lista-idiomas">
+            <div class="item-idioma">
+              <span class="nome-idioma">Português</span>
+              <div class="barra-nivel">
+                <div class="nivel nivel-nativo"></div>
+              </div>
+              <span class="texto-nivel">Nativo</span>
+            </div>
+            <div class="item-idioma">
+              <span class="nome-idioma">Inglês</span>
+              <div class="barra-nivel">
+                <div class="nivel nivel-avancado"></div>
+              </div>
+              <span class="texto-nivel">Fluente</span>
+            </div>
+            <div class="item-idioma">
+              <span class="nome-idioma">Espanhol</span>
+              <div class="barra-nivel">
+                <div class="nivel nivel-intermediario"></div>
+              </div>
+              <span class="texto-nivel">Básico</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- CERTIFICAÇÕES -->
+        <section class="secao-certificacoes">
+          <h3 class="titulo-secao">
+            <i class="icone">🏆</i>
+            Certificações
+          </h3>
+          <ul class="lista-certificacoes">
+            <li class="item-certificacao">
+              <strong>Projeto de desenvolvimento low-code Outsystems (curso + projeto) - Sispro LTDA</strong>
+              <span class="data-cert">2025</span>
+            </li>
+            <li class="item-certificacao">
+              <strong>Curso Front-end Completo - Gustavo Guanabara</strong>
+              <span class="data-cert">2023</span>
+            </li>
+            <li class="item-certificacao">
+              <strong>Git e Github - DankiCode</strong>
+              <span class="data-cert">2023</span>
+            </li>
+          </ul>
+        </section>
+      </aside>
+
+      <!-- COLUNA DIREITA -->
+      <main class="coluna-direita">
+        
+        <!-- EXPERIÊNCIA PROFISSIONAL -->
+        <section class="secao-experiencia">
+          <h3 class="titulo-secao-principal">
+            <i class="icone-principal">💼</i>
+            Experiência Profissional
+          </h3>
+          
+          <div class="timeline-experiencia">
+            <article class="item-experiencia">
+              <div class="marcador-timeline"></div>
+              <div class="conteudo-experiencia">
+                <div class="cabecalho-experiencia">
+                  <h4 class="cargo">Generative AI Developer</h4>
+                  <span class="empresa">BlueMetrics Ltda.</span>
+                </div>
+                <p class="periodo">Setembro 2025 - Presente</p>
+                <ul class="responsabilidades">
+                  <li>Desenvolvimento de IA Generativa</li>
+                  <li>Criar funções usando Lambda</li>
+                  <li>Arquitetura de soluções escaláveis em nuvem AWS</li>
+                </ul>
+                <div class="tags-tecnologias">
+                  <span class="tag-tech">Lambda</span>
+                  <span class="tag-tech">Node.js</span>
+                  <span class="tag-tech">AWS</span>
+                  <span class="tag-tech">Bedrock</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="item-experiencia">
+              <div class="marcador-timeline"></div>
+              <div class="conteudo-experiencia">
+                <div class="cabecalho-experiencia">
+                  <h4 class="cargo">Capacitação de desenvolvimento low-code em Outsystems</h4>
+                  <span class="empresa">StartUp Inovadora</span>
+                </div>
+                <p class="periodo">Julho 2025 - Agosto 2025</p>
+                <p class="descricao-simples">
+                  Desenvolvimento web low-code com a criação de telas, interface, lógicas e banco de dados
+                </p>
+              </div>
+            </article>
+
+            <article class="item-experiencia">
+              <div class="marcador-timeline"></div>
+              <div class="conteudo-experiencia">
+                <div class="cabecalho-experiencia">
+                  <h4 class="cargo">Estagiário de suporte técnico</h4>
+                  <span class="empresa">Vogar LTDA</span>
+                </div>
+                <p class="periodo">Abril 2025 - Julho 2025</p>
+                <ul class="responsabilidades">
+                  <li>Suporte técnico aos clientes Vogar e E-vogar</li>
+                  <li>Gestão de ciclo de vida dos tickets</li>
+                  <li>Gestão de Documentação</li>
+                </ul>
+                <div class="tags-tecnologias">
+                  <span class="tag-tech">AnyDesk</span>
+                  <span class="tag-tech">Sistema ERP</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- FORMAÇÃO ACADÊMICA -->
+        <section class="secao-formacao">
+          <h3 class="titulo-secao-principal">
+            <i class="icone-principal">🎓</i>
+            Formação Acadêmica
+          </h3>
+          
+          <div class="lista-formacao">
+            <div class="item-formacao">
+              <div class="info-curso">
+                <h4 class="nome-curso">Bacharelado em Ciência da Computação</h4>
+                <p class="instituicao">La Salle</p>
+                <p class="periodo-curso">2024 - 2028</p>
+              </div>
+              <div class="status-curso">
+                <span class="badge-concluido">Em Andamento</span>
+              </div>
+            </div>
+            
+            <div class="item-formacao">
+              <div class="info-curso">
+                <h4 class="nome-curso">Técnico em Informática</h4>
+                <p class="instituicao">QI Curso técnico e Faculdade</p>
+                <p class="periodo-curso">2022 - 2023</p>
+              </div>
+              <div class="status-curso">
+                <span class="badge-concluido">Concluído</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PROJETOS DESTACADOS -->
+        <section class="secao-projetos">
+          <h3 class="titulo-secao-principal">
+            <i class="icone-principal">🚀</i>
+            Projetos Destacados
+          </h3>
+          
+          <div class="grid-projetos">
+            <div class="card-projeto">
+              <h4 class="nome-projeto">Meu currículo em site</h4>
+              <p class="descricao-projeto">
+                Criei uma landing-page do meu currículo
+              </p>
+              <div class="tecnologias-projeto">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+              </div>
+              <div class="links-projeto">
+                <a href="#" class="link-projeto">Ver Demo</a>
+                <a href="#" class="link-projeto">GitHub</a>
+              </div>
+            </div>
+
+            <div class="card-projeto">
+              <h4 class="nome-projeto">Site de uma empresa de tecnologia fictícia (AstroTech) </h4>
+              <p class="descricao-projeto">
+                Site criado para a empresa AstroTech, com objetivo de mostrar seus produtos e soluções
+              </p>
+              <div class="tecnologias-projeto">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+              </div>
+              <div class="links-projeto">
+                <a href="#" class="link-projeto">AstroTech.com</a>
+                <a href="#" class="link-projeto">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- ===================== RODAPÉ COM AÇÕES ===================== -->
+    <footer class="rodape">
+      <div class="acoes-curriculo">
+        <a href="#" class="btn-acao btn-primario">
+          <i class="icone-btn">📄</i>
+          Baixar PDF
+        </a>
+        <a href="#" class="btn-acao btn-secundario">
+          <i class="icone-btn">💼</i>
+          Ver Portfólio
+        </a>
+        <a href="/cdn-cgi/l/email-protection#dfacbaaaf1bab2beb6b39fbaa7bab2afb3b0f1bcb0b2" class="btn-acao btn-secundario">
+          <i class="icone-btn">📧</i>
+          Entrar em Contato
+        </a>
+      </div>
+      
+      <div class="info-rodape">
+        <p>&copy; 2025 Iago Boettge. Todos os direitos reservados.</p>
+        <p class="atualizacao">Última atualização: Outubro 2025</p>
+      </div>
+    </footer>
+  </div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

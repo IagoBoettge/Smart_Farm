@@ -44,11 +44,11 @@ header {
 }
 
 header img {
-    height: 50px;
+    height: 150px;
     transition: transform 0.3s;
 }
 
-header img:hover { transform: rotate(-10deg); }
+header img:hover { transform: rotate(360deg); }
 
 nav { display: flex; gap: 15px; }
 
@@ -57,7 +57,7 @@ nav button {
     border: none;
     font-family: var(--font-main);
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: #78909C; 
     cursor: pointer;
     padding: 8px 16px;
@@ -209,10 +209,38 @@ main {
     border-left: 5px solid var(--primary-color); 
     transition: transform 0.2s;
 }
+.sensors {
+    background: white;
+    font-size: 3rem;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(1, 87, 155, 0.05); 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-left: 5px solid var(--primary-color); 
+    transition: transform 0.2s;
+}
 
 .sensor:hover { transform: translateY(-5px); }
 
 .sensor .label {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #455A64;
+}
+.sensors:hover { transform: translateY(-5px); }
+
+.sensor .label {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #455A64;
+}
+.sensors .label {
     display: flex;
     justify-content: space-between;
     font-weight: 600;
@@ -226,8 +254,20 @@ main {
     border-radius: 6px;
     overflow: hidden;
 }
+.sensors .bar {
+    height: 12px;
+    background: #ECEFF1;
+    border-radius: 6px;
+    overflow: hidden;
+}
 
 .sensor .bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+    border-radius: 6px;
+    transition: width 1s ease-in-out;
+}
+.sensors .bar-fill {
     height: 100%;
     background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
     border-radius: 6px;
@@ -238,7 +278,7 @@ main {
 .btn-column {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
+    gap: 50px;
     max-width: 800px;
     margin: 0 auto;
 }

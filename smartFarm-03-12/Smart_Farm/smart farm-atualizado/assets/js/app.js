@@ -24,7 +24,7 @@ function showSection(section) {
     document.getElementById("charts").style.display = "none";
     document.getElementById("botoes").style.display = "none";
     document.getElementById("pg-inicio").style.display = "none";
-    
+    document.getElementById("pg-curriculo").style.display = "none";
     // Remove classe ativa de todos botões
     document.querySelectorAll("nav button").forEach(btn => btn.classList.remove("active"));
 
@@ -42,6 +42,9 @@ function showSection(section) {
     } else if (section === 'botoes') {
         document.getElementById("botoes").style.display = "block";
         document.getElementById("btn-botoes").classList.add("active");
+    } else if (section === 'pg-curriculo') {
+        document.getElementById("pg-curriculo").style.display = "block";
+        document.getElementById("btn-curriculo").classList.add("active");
     }
 }
 

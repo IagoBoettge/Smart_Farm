@@ -1,0 +1,1 @@
+Os meus maiores desafios foi a manipulação da posição dos containers e dos elementos dentro deles. Além disso, aprendi bastante no CSS, como quais elementos são possíveis alterar no :hover, por exemplo, o border e o background com o linear-gradient e também as possibilidades de criar formas diferentes com o border-radius.

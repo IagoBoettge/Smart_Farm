@@ -1,0 +1,212 @@
+/* =========================
+   Currículo – styles.css
+   Paleta roxos/vinho
+   ========================= */
+
+/* Reset & tokens */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root{
+  --roxo-escuro:#4d0a38;
+  --roxo-medio:#963b8a;
+  --rosa-borda:#eb25db;
+  --borda:#970f68;
+  --cinza-texto:#111827;
+  --cinza-suave:#f9fafb;
+  --cinza-card:#ffffff;
+  --cinza-borda:#e5e7eb;
+}
+
+/* Base */
+body{
+  font-family: 'Times New Roman', Times, serif;
+  color: var(--cinza-texto);
+  background: var(--cinza-suave);
+  line-height: 1.6;
+}
+
+/* Container principal */
+.container{
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 24px;
+}
+
+/* ===================== Cabeçalho ===================== */
+.cabecalho{
+  display:flex; align-items:center; gap:24px;
+  background:#fff;
+  border:1px solid var(--borda);
+  border-radius:16px;
+  padding:24px;
+}
+.foto-container{ flex-shrink:0; }
+.foto-perfil{
+  width:180px; height:180px; object-fit:cover; border-radius:12px;
+  border:3px solid var(--rosa-borda);
+  box-shadow:0 2px 10px rgba(0,0,0,.12);
+  transition:transform .25s ease;
+}
+.foto-perfil:hover{ transform: scale(1.03); }
+
+.info-principal{}
+.nome-completo{ margin:0; font-size:34px; letter-spacing:.3px; color:#000; }
+.cargo-objetivo{ margin:.2rem 0 0 0; font-size:18px; font-weight:700; color:var(--roxo-medio); }
+.resumo-profissional{ margin-top:10px; font-size:15px; color:var(--roxo-escuro); }
+
+/* ===================== Grid Principal ===================== */
+.grid-principal{
+  display:grid; grid-template-columns: 340px 1fr; gap:24px; margin-top:24px;
+}
+
+/* ===================== Sidebar ===================== */
+.coluna-esquerda{
+  background:#fff; border:1px solid var(--borda); border-radius:14px;
+  padding:20px; position:sticky; top:20px; height:fit-content;
+}
+.titulo-secao{
+  display:flex; align-items:center; gap:10px;
+  font-size:1.06rem; font-weight:800; color:var(--roxo-escuro);
+  margin:0 0 12px 0; padding-bottom:8px; border-bottom:2px solid var(--borda);
+}
+.icone{ font-style:normal; }
+
+/* Contato */
+.lista-contato{ display:flex; flex-direction:column; gap:8px; }
+.item-contato{ display:flex; flex-direction:column; }
+.label{ font-weight:800; color:var(--roxo-medio); font-size:.92rem; }
+.valor{ color:#333; }
+.link-contato{
+  color:var(--roxo-escuro); text-decoration:none; border-bottom:1px solid #93c5fd;
+  width:max-content;
+}
+.link-contato:hover{ text-decoration:underline; }
+
+/* Habilidades (chips) */
+.grid-habilidades{ display:flex; flex-wrap:wrap; gap:8px; }
+.chip-habilidade{
+  display:inline-block; padding:6px 12px; border-radius:9999px;
+  background:#eef2ff; color:#3730a3; font-weight:800; font-size:.86rem;
+}
+
+/* Idiomas */
+.lista-idiomas{ display:flex; flex-direction:column; gap:12px; }
+.item-idioma{ display:flex; align-items:center; gap:10px; }
+.nome-idioma{ min-width:80px; font-weight:800; color:#222; }
+.barra-nivel{ flex:1; height:6px; background:#e2e8f0; border-radius:4px; overflow:hidden; }
+.nivel{ height:100%; }
+.nivel-nativo{ width:100%; background:#0ea5e9; }
+.nivel-avancado{ width:85%; background:#a855f7; }
+.nivel-intermediario{ width:65%; background:#f59e0b; }
+.texto-nivel{ font-size:.8rem; color:#475569; min-width:92px; }
+
+/* Certificações */
+.lista-certificacoes{
+  list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px;
+}
+.item-certificacao{
+  display:flex; justify-content:space-between; align-items:center; gap:10px;
+  background:#fff; border:1px solid var(--cinza-borda); border-left:4px solid var(--borda);
+  border-radius:8px; padding:10px 12px;
+}
+.data-cert{ color:#64748b; font-weight:800; font-size:.9rem; }
+
+/* ===================== Coluna Direita ===================== */
+.coluna-direita{ display:flex; flex-direction:column; gap:24px; }
+
+/* Título principal das seções grandes */
+.titulo-secao-principal{
+  display:flex; align-items:center; gap:10px;
+  font-size:1.3rem; font-weight:900; color:var(--roxo-escuro);
+  margin:0 0 14px 0; padding-bottom:8px; border-bottom:3px solid var(--borda);
+}
+.icone-principal{ font-style:normal; }
+
+/* Timeline Experiência */
+.timeline-experiencia{ position:relative; padding-left:26px; }
+.timeline-experiencia::before{
+  content:""; position:absolute; left:10px; top:0; bottom:0; width:2px;
+  background:linear-gradient(to bottom,var(--borda),#e2e8f0);
+}
+.item-experiencia{ position:relative; margin-bottom:18px; }
+.marcador-timeline{
+  position:absolute; left:-19px; top:6px; width:12px; height:12px; border-radius:50%;
+  background:var(--borda); border:3px solid #fff; box-shadow:0 0 0 3px #e2e8f0;
+}
+.conteudo-experiencia{
+  background:var(--cinza-card); border:1px solid var(--cinza-borda); border-left:4px solid var(--borda);
+  border-radius:12px; padding:16px; transition:transform .2s, box-shadow .2s;
+}
+.conteudo-experiencia:hover{ transform:translateY(-2px); box-shadow:0 8px 22px rgba(0,0,0,.08); }
+.cabecalho-experiencia{ display:flex; justify-content:space-between; gap:10px; align-items:flex-start; }
+.cargo{ margin:0; color:#0f172a; font-size:1.05rem; }
+.empresa{ color:var(--roxo-medio); font-weight:800; }
+.periodo{ color:var(--roxo-escuro); font-style:italic; margin:.3rem 0 .6rem 0; }
+.responsabilidades{ margin:0 0 .4rem 18px; padding-left:6px; }
+.responsabilidades li{ margin:.25rem 0; }
+
+/* Tags de tecnologia (experiência) */
+.tags-tecnologias{ display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; }
+.tag-tech{
+  background:#ede9fe; color:#6d28d9; padding:4px 8px;
+  border-radius:12px; font-size:.8rem; font-weight:700;
+}
+
+/* Formação */
+.lista-formacao{ display:flex; flex-direction:column; gap:14px; }
+.item-formacao{
+  display:flex; justify-content:space-between; gap:12px; align-items:center;
+  background:#fff; border:1px solid var(--cinza-borda); border-left:4px solid var(--borda);
+  border-radius:12px; padding:14px 16px;
+}
+.nome-curso{ margin:0 0 4px 0; font-size:1.05rem; color:#0f172a; }
+.instituicao{ margin:0; color:var(--roxo-medio); font-weight:800; }
+.periodo-curso{ margin:2px 0 0 0; color:var(--roxo-escuro); }
+.status-curso{ display:flex; align-items:center; }
+.badge-concluido,.badge-cursando{ padding:6px 10px; border-radius:999px; font-weight:900; font-size:.8rem; }
+.badge-concluido{ background:#d1fae5; color:#065f46; }
+.badge-cursando{ background:#fef3c7; color:#92400e; }
+
+/* Projetos */
+.grid-projetos{ display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:16px; }
+.card-projeto{
+  background:#fff; border:1px solid var(--cinza-borda); border-top:4px solid var(--borda);
+  border-radius:12px; padding:16px; transition:transform .2s, box-shadow .2s;
+}
+.card-projeto:hover{ transform:translateY(-2px); box-shadow:0 10px 24px rgba(0,0,0,.08); }
+.nome-projeto{ margin:0 0 6px 0; font-size:1.05rem; color:#0f172a; }
+.descricao-projeto{ margin:0 0 10px 0; }
+.tecnologias-projeto{ display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px; }
+.tech-tag{ background:#f3f4f6; color:#374151; padding:4px 8px; border-radius:12px; font-size:.8rem; font-weight:800; }
+.links-projeto{ display:flex; gap:10px; }
+.link-projeto{ color:var(--roxo-escuro); text-decoration:none; border:1px solid var(--borda); padding:6px 10px; border-radius:8px; }
+.link-projeto:hover{ background:var(--borda); color:#fff; }
+
+/* ===================== Rodapé com ações ===================== */
+.rodape{
+  margin-top:24px; background:#fff; border:1px solid var(--borda); border-radius:14px;
+  padding:20px; text-align:center;
+}
+.acoes-curriculo{ display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin-bottom:12px; }
+.btn-acao{ display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:8px; text-decoration:none; font-weight:900; }
+.btn-primario{ background:var(--borda); color:#fff; }
+.btn-primario:hover{ filter:brightness(1.05); }
+.btn-secundario{ background:transparent; color:var(--roxo-escuro); border:2px solid var(--borda); }
+.btn-secundario:hover{ background:#fff0fb; }
+.icone-btn{ font-style:normal; }
+.info-rodape{ border-top:1px solid var(--cinza-borda); padding-top:10px; }
+.atualizacao{ font-style:italic; color:#475569; }
+
+/* ===================== Responsividade ===================== */
+@media (max-width: 960px){
+  .grid-principal{ grid-template-columns:1fr; }
+  .cabecalho{ flex-direction:column; text-align:center; }
+}
+
+/* ===================== (Opcional) Estilos de impressão ===================== */
+@media print{
+  body{ background:#fff; }
+  .rodape .acoes-curriculo{ display:none !important; }
+  .cabecalho, .coluna-esquerda, .coluna-direita, .rodape, .conteudo-experiencia, .item-formacao, .card-projeto{
+    box-shadow:none !important;
+  }
+}

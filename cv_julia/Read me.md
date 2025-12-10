@@ -1,0 +1,1 @@
+Aprender HTML trouxe desafios como organizar a estrutura das tags, lidar com links/imagens e separar bem HTML de CSS. No processo, aprendi a manter o código limpo, usar recursos de acessibilidade e entender o papel de cada linguagem. No fim, ficou claro que o HTML é a base de tudo no desenvolvimento web.
