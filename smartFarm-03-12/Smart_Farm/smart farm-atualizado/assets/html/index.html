@@ -50,20 +50,13 @@
 
     </section>
 
-    <!-- Gráficos (visível só no menu "Gráficos") -->
-    <section id="charts" style="display: none;">
-      <h3>📊 Dados Históricos dos Sensores</h3>
-      <div>
-
-        <span>🔥 Temp</span>
-        <span>💨 Umidade</span>
-        <span>🌧️ Vapor</span>
-        <span>🔆 Luz</span>
-        <span>🌾 Solo</span>
-        <span>🌊 Água</span>
-      </div>
-      <canvas id="chartCanvas" width="900" height="900"></canvas>
-    </section>
+   <section id="charts" style="display: none;">
+  <h3>📊 Dados Históricos dos Sensores</h3>
+  
+  <div id="chartLegend" style="display:flex; justify-content:center; gap:18px; margin-bottom:10px; flex-wrap: wrap;"></div>
+  
+  <canvas id="chartCanvas" width="900" height="600"></canvas>
+</section>
 
     <section id="botoes" style="display: none;">
       <h3>Controles</h3>
