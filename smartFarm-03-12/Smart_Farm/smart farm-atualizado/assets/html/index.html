@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Farm Dashboard</title>
-    <script src="../js/app.js"></script>
-    <link rel="stylesheet" href="css/index.css">
-    
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Farm Dashboard</title>
+  <script src="../js/app.js"></script>
+  <link rel="stylesheet" href="css/index.css">
+
 </head>
+
 <body>
-   <audio id="backgroundMusic" loop>
-      <source src="../audio/musica_romantica.mp3" type="audio/mpeg">
-    </audio>
+  <audio id="backgroundMusic" loop>
+    <source src="../audio/musica_romantica.mp3" type="audio/mpeg">
+  </audio>
   <header>
     <img src="css/icons/logo.png" alt="">
     <nav>
-     
+
       <button id="btn-pg-inicio" class="active" onclick="showSection('pg-inicio')">Início</button>
-      <button id="btn-dashboard"  onclick="showSection('dashboard')">Painel Atual</button>
+      <button id="btn-dashboard" onclick="showSection('dashboard')">Painel Atual</button>
       <button id="btn-charts" onclick="showSection('charts')">Gráficos</button>
       <button id="btn-botoes" onclick="showSection('botoes')">Botões</button>
       <button id="btn-curriculo" onclick="showSection('pg-curriculo')">Currículos</button>
@@ -45,14 +47,14 @@
            
           </div>
           -->
-      
+
     </section>
 
     <!-- Gráficos (visível só no menu "Gráficos") -->
     <section id="charts" style="display: none;">
       <h3 style="font-size: 3.5rem; margin-bottom: 30px;">📊 Dados Históricos dos Sensores</h3>
       <div style="font-size: 2rem; display: flex; justify-content:center; gap:18px; margin-bottom:10px;">
-        
+
         <span>🔥 Temp</span>
         <span>💨 Umidade</span>
         <span>🌧️ Vapor</span>
@@ -64,14 +66,12 @@
     </section>
 
     <section id="botoes" style="display: none;">
-        <h3 style="text-align:center; margin-bottom: 60px;">Controles</h3>
-        <div class="btn-column">
-            <button class="control-btn led" onclick="sendCmd('LED')">🔦 LED</button>
-            <button class="control-btn fan" onclick="sendCmd('FAN')">🍃 Ventilar</button>
-            <button class="control-btn feed" onclick="sendCmd('FEED')">🍽️ Alimentar</button>
-            <button class="control-btn water" onclick="sendCmd('WATER')">⛲ Água</button>
-        </div>
-    
+      <h3 style="text-align:center; margin-bottom: 60px;">Controles</h3>
+
+      <button class="control-btn led" onclick="sendCmd('LED')">Iluminação</button>
+      <button class="control-btn fan" onclick="sendCmd('FAN')">Ventilação</button>
+      <button class="control-btn feed" onclick="sendCmd('FEED')">Alimentador</button>
+      <button class="control-btn water" onclick="sendCmd('WATER')">Irrigação</button>
     </section>
 
     <section id="pg-inicio">
@@ -81,48 +81,55 @@
       <div style="text-align: center; margin-top: 50px; font-size: 20px;">
         <h1>Bem-vindo ao Smart Farm Dashboard</h1>
         <p>Monitore e controle sua fazenda inteligente com facilidade.</p>
-        
+
         <!-- Conversa Wall-E e EVA -->
-        <div style="max-width: 800px; margin: 40px auto; background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px;">
+        <div
+          style="max-width: 800px; margin: 40px auto; background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px;">
           <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
             <div style="font-size: 4rem;">🤖</div>
-            <div style="background: rgba(255,255,255,0.9); color: #333; padding: 15px; border-radius: 15px 15px 15px 0; flex: 1; text-align: left;">
+            <div
+              style="background: rgba(255,255,255,0.9); color: #333; padding: 15px; border-radius: 15px 15px 15px 0; flex: 1; text-align: left;">
               <strong>Wall-E:</strong> EVA! Olha essa fazenda inteligente! 🌱✨
             </div>
           </div>
-          
+
           <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px; flex-direction: row-reverse;">
             <div style="font-size: 4rem;">🤍</div>
-            <div style="background: rgba(255,255,255,0.9); color: #333; padding: 15px; border-radius: 15px 15px 0 15px; flex: 1; text-align: left;">
+            <div
+              style="background: rgba(255,255,255,0.9); color: #333; padding: 15px; border-radius: 15px 15px 0 15px; flex: 1; text-align: left;">
               <strong>EVA:</strong> Wall-E! Sensores... monitoramento... INCRÍVEL! 💚
             </div>
           </div>
-          
+
           <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
             <div style="font-size: 4rem;">🤖</div>
-            <div style="background: rgba(255,255,255,0.9); color: #333; padding: 15px; border-radius: 15px 15px 15px 0; flex: 1; text-align: left;">
+            <div
+              style="background: rgba(255,255,255,0.9); color: #333; padding: 15px; border-radius: 15px 15px 15px 0; flex: 1; text-align: left;">
               <strong>Wall-E:</strong> Podemos cuidar das plantas juntos! 🌿💧
             </div>
           </div>
-          
+
           <div style="display: flex; align-items: center; gap: 15px;">
             <div style="font-size: 4rem;">🤍</div>
-            <div style="background: rgba(255,255,255,0.9); color: #333; padding: 15px; border-radius: 15px 15px 0 15px; flex: 1; text-align: left;">
+            <div
+              style="background: rgba(255,255,255,0.9); color: #333; padding: 15px; border-radius: 15px 15px 0 15px; flex: 1; text-align: left;">
               <strong>EVA:</strong> Diretriz... cultivar vida! Wall-E... ❤️
             </div>
           </div>
         </div>
-        
+
         <img id="wgiff" src="css/source.gif" alt="gif animado " style="max-width: 80%; height: auto; margin-top: 20px;">
       </div>
-      
+
     </section>
 
 
     <section id="pg-curriculo" style="display: none;">
       <h3>Currículos</h3>
-      
-      <a href="../../../../../curriculos/curriculoiago/curriculo-template.html"><p>CV - Iago</p></a>
+
+      <a href="../../../../../curriculos/curriculoiago/curriculo-template.html">
+        <p>CV - Iago</p>
+      </a>
       <a href="../../../../../curriculos/curriculojulia/curriculo-template.html">CV - Julia</a>
       <a href="../../../../../curriculos/curriculoguilherme/curriculo-template.html">CV - Guilherme</a>
       <a href="../../../../../curriculos/curriculodaniel/curriculo-template.html">CV - Daniel</a>
@@ -131,7 +138,8 @@
       <a href="../../../../../curriculos/curriculoluana/curriculo-template.html">CV - Luana</a>
     </section>
 
-    
+
   </main>
 </body>
+
 </html>
